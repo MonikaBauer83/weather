@@ -101,10 +101,7 @@ main {
 
 .weather-forecast-temperature {
   font-size: 13px;
-}
-
-.weather-forecast-temperature-min {
-  opacity: 0.5;
+  color: #749bc2;
 }
 
 footer {

@@ -48,10 +48,40 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
+
   searchCity(searchInput.value);
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="weather-forecast-day">
+      <div class="weather-forecast-date">${day}</div>
+      <div class="weather-forecast-icon">🌤️</div>
+      <div class="weather-forecast-temperatues">
+         <div class="weather-forecast-temperature">
+      <strong>18°</strong>
+        </div>
+        <div class="weather-forecast-temperature">
+      9°
+        </div>
+      </div>
+    </div>
+  `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
 }
 
 let searchformelement = document.querySelector("#search-form");
 searchformelement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Vienna");
+displayForecast();
